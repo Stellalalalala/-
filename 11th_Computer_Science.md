@@ -128,5 +128,94 @@ Hungry Girl Say High(簡稱：HGSH) 是一款新型線上遊戲。
         cout << hungry << endl;
     }
 
+## Unit 4 迴圈(for)
+# 4-1. 巴斯光年
+「飛向宇宙，浩瀚無垠！(To Infinity and Beyond)」
+
+身為一個星際太空人玩具，巴斯光年決定完成他的使命：「飛向宇宙」
+請寫一個程式，幫助他做發射秒數的倒數計時
+
+◆輸入說明：一個正整數，代表倒數總秒數
+
+◆輸出說明：秒數倒數過程，結尾需換行
+
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        int N;
+        cin >> N;
+
+        for(int i = N ; i >= 1 ; --i )
+        {
+            cout << i << " ..." << endl;
+        }
+
+        cout << "飛向宇宙，浩瀚無垠！" << endl;
+
+    }
+
+# 4-2.雙11購物節
+11月11日是「雙 11 購物節」，這天所有東西都會打折
+
+已知每個客人都恰好買三件商品，分別為 A、B、C
+
+給定 N 個客人所買的三件商品價錢，和加總後需打折數 K，求商品最後總和
+
+◆輸入說明：第一行為正整數 N，代表接下來有 N 組測資。每組皆有四個數字，分別為三個正整數代表商品價錢 A、B、C，和一個小數代表打折數 K
+
+◆輸出說明：計算打折後商品總和
+
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        int N;
+        cin >> N;
+
+        for (int i = 0; i < N ; ++i)
+        {
+            double a,b,c,k;
+            cin >> a >> b >> c >> k ;
+            cout << (a+b+c) * k << endl;
+        }
+    }
+
+# 4-3.七公斤魔咒
+在 HGSH online 中謠傳有「七公斤魔咒」，可怕的是隨著時間，魔咒已經由最初登出會較登入增加七公斤轉變為「每待在遊戲中一年，就會增加七公斤」
+
+假設每個玩家都會在遊戲中待滿三年，給定 N 個玩家所在年級 Y 和該年級初始體重 W，求最後登出時體重
+
+◆輸入說明：第一行為正整數 N，代表接下來有 N 組測資。每組皆有兩個整數，代表年級 Y (分別為 1、2 或 3) 和體重 W。其中特別的是，年級非 1、2、3 者被視為非法玩家，不受魔咒影響
+
+◆輸出說明：計算登出時體重
+
+    #include <iostream>
+    using namespace std;
+
+    main()
+    {
+        int n, y, w;
+        cin >> n;
+
+        for ( int i = 0 ; i < n ; ++i )
+        {
+            cin >> y >> w;
+
+            if ( y < 4 && y > 0 )
+            {
+                cout << w + 7*(4-y)<< endl;
+            }
+            else
+            {
+                cout << w << endl;
+            }
+        }
+
+    }
+
+
 
 
